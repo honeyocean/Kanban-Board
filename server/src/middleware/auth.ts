@@ -19,7 +19,7 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
   try{
     const decodedToken = jwt.verify(token,SECRET_KEY) as JwtPayload;
     req.user = decodedToken;
-    next();
+    return next();
   }catch(err){
     console.error('Error: ', err);
     return res.status(401).json({message:"Bad token"});
