@@ -27,7 +27,7 @@ class AuthService {
 
   getToken(): string {
     // TODO: return the token
-    const token = localStorage.getItem('id_token');
+    const token = localStorage.getItem('id_token') ??'';
     return token;
   }
 
