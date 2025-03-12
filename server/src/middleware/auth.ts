@@ -22,6 +22,6 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
     next();
   }catch(err){
     console.error('Error: ', err);
-    return res.status(401).json({"Bad token"});
+    return res.status(401).json({message:"Bad token"});
   }
 };
